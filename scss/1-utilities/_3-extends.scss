@@ -1,0 +1,71 @@
+//==========================================
+// Extends
+//==========================================
+
+/*==========  Buttons  ==========*/
+
+%btn {
+    border: 2px solid $white;
+    color: $white;
+    border-radius: 16px / 25px;
+    display: inline-block;
+    padding: 15px 20px;
+    line-height: $form--font-size;
+    font-size: $form--font-size;
+    text-align: center;
+    font-weight: $font-weight--light;
+
+    &:active {
+        box-shadow: 0 1px 7px rgba($black, 0.55) inset;
+        -moz-transition: none;
+        -o-transition: none;
+        -webkit-transition: none;
+        transition: none;
+    }
+}
+
+/*==========  Nav Items  ==========*/
+
+%nav-item-link {
+  background-color: $nav-link--bg;
+  border-bottom: 2px solid $white;
+  color: $white;
+  display: block;
+  font-size: floor($font-size--base * 1.1);
+  font-weight: $font-weight--light;
+  padding: 10px 15px;
+  &:hover {
+    background: darken($nav-link--bg, 7%);
+    color: $white;
+  }
+}
+
+/*==========  Headlines  ==========*/
+
+%headline {
+  @extend %clearfix;
+  color: $white;
+  font-stretch: condensed;
+  font-weight: bold;
+  line-height: 0.75;
+}
+
+%headline-primary {
+  @extend %headline;
+  font-size: em(70pt);
+  padding: em(30px, 70pt) 0;
+  @media (min-width: $screen-sm) {
+    font-size: em(90pt);
+    padding: em(80px, 90pt) 0 em(50px, 90pt);
+  }
+}
+
+%headline-secondary {
+  @extend %headline;
+  font-size: em(30pt);
+  padding: em(30px, 30pt) 0;
+  @media (min-width: $screen-sm) {
+    font-size: em(50pt);
+    padding: em(30px, 50pt) 0;
+  }
+}

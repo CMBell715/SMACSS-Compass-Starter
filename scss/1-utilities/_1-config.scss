@@ -1,0 +1,153 @@
+
+/*==============================
+=            Colors            =
+==============================*/
+
+$white		: #f6f6f6;
+$gray		: #333; 
+$grey		: $gray;
+$black		: #101010;
+
+$blue		: #143f65;
+$lightBlue  : #0092c1;
+$green		: #187218;
+$orange		: #f68f1e;
+$red		: #F44718;
+$yellow		: #A8B11A;
+
+$body-bg	: $white;
+
+$font-color				: $gray;
+$font-color--inverse	    : $white;
+$link-color				: $green;
+
+$nav-link--bg			: $blue;
+$nav-link--color			: $font-color--inverse;
+
+
+/*==========  Color Maps  ==========*/
+
+$ui-colors: (
+		default	: $red,
+		success	: $green,
+		info	: $blue,
+		error	: darken($red, 25%),
+		warning	: $yellow
+);
+
+$palettes: (
+	gray: (
+		x-light	: lighten($gray, 35%),
+		light	: lighten($gray, 12%),
+		base	: $gray,
+		dark	: darken($gray, 12%),
+		x-dark	: darken($gray, 35%)
+	),
+	black: (
+		x-light	: lighten($black, 35%),
+		light	: lighten($black, 12%),
+		base	: $black,
+  )
+);
+
+
+/*=============================
+=            Fonts            =
+=============================*/
+
+// $font-url--google				: "http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700";
+
+$font-family--primary	: "myriad-pro-condensed", "Myriad Pro", sans-serif;
+$font-family--secondary	: "Source Sans Pro", Helvetica, Arial, sans-serif;
+
+$font-weight--thin		: 200;
+$font-weight--light		: 300;
+$font-weight--medium		: 400;
+$font-weight--bold		: 700;
+$font-weight--black		: 900;
+
+$font-weight--body      : $font-weight--medium;
+
+$font-size--base			: 16px;
+$font-size--line-height	: $font-size--base * 1.6180339;
+
+$font-size--smaller		: $font-size--base * .8;
+
+
+$form--font-size: $font-size--base;
+
+$border-radius: 20px unquote('/') 30px;
+
+/*============================
+=            Grid            =
+============================*/
+$container-width		: 90%;
+$g-col-count			: 12;
+$g-col-width			: 65px;
+$g-gutter-width		: 20px;
+$g-container-max-w	: 1200px;
+
+
+
+/*===================================
+=          Media Query BPs          =
+===================================*/
+/*====================================
+=            Screen Sizes            =
+====================================*/
+
+$screen-xs	: 480px;
+$screen-sm	: 768px;
+$screen-md	: 960px;
+$screen-lg	: 1200px;
+$screen-xl	: 1800px;
+
+/*====================================
+=            Landing Page            =
+====================================*/
+$header-height: 600px;
+
+// $screen-sizes : (
+// 	screen-xs	: 480px,
+// 	screen-sm	: 768px,
+// 	screen-md	: 960px,
+// 	screen-lg	: 1200px,
+// 	screen-xl	: 1800px
+// );
+
+
+// @each $letter, $size in $screen-sizes {
+//     [class^= "col__#{$letter}"] {
+//       float: left;
+//     }
+//    @media (min-width: $size) {  
+//    @for $i from 1 through $g-col-count {
+//       $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
+//       $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+  
+//       // Generate column modifier classes
+//       .col__#{$letter}--#{$i} {
+//         %float-none {float: none;}
+//         // @extend %float-left;
+//         width: percentage($target / $context);
+//     	}
+//     }
+//   }
+// }
+
+// Column styles
+// [class^="col--"] {
+//   margin: em(12px)0;
+//   float: none;
+  
+//   @media (min-width: $screen-sm) {
+//     @include adjacentSiblings(percentage($g-gutter-width / $context));
+//     float: left;
+//     min-height: 1px;
+//     padding-left: 10px;
+//     padding-right: 10px;
+//     &:last-of-type {
+//       float: right;
+//     }
+//   }
+// }

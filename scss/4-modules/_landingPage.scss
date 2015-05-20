@@ -1,0 +1,55 @@
+﻿.main-header {
+    @include background-image(radial-gradient(40% 40%, lighten($lightBlue, 10%),darken($lightBlue, 10%) 150%));
+    padding: 75px 20px;
+    position: fixed;
+    height: $header-height;
+    width: 100%;
+    z-index: 40;
+    top: 0;
+    left: 0;
+
+    @media (min-width: $screen-sm) {
+        padding: 50px 0;
+    }
+
+    .header-logo {
+        margin: 0 auto;
+    }
+
+    &-title {
+        color: $white;
+        font-size: 1.75em;
+        margin: 1em 0;
+
+        @media (min-width: $screen-md) {
+            font-size: 2.25em;
+        }
+
+        @media (min-width: $screen-lg) {
+            font-size: 2.5em;
+        }
+    }
+}
+
+.main-content {
+    position: absolute;
+    top: $header-height;
+    width: 100%;
+    z-index: 50;
+    left: 0;
+}
+
+.navbar-landing-page {
+    margin-bottom: 0;
+
+    &.affix-top .navbar-brand {
+        img {
+            max-height: 100%;
+        }
+    }
+
+    &.affix .navbar-brand {
+        display: block;
+        padding: 2px 15px;
+    }
+}

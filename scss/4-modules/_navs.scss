@@ -1,0 +1,223 @@
+/**
+* .navbar is the container for nav
+* Has to include a navigation element
+* Might contain other elements like logo, search, etc.
+**/
+.nav-drowpdown {
+    width: 100%;
+}
+
+.nav .open > a {
+    background: transparent;
+}
+/*==========  Hamburger Menu  ==========*/
+.navbar-default .navbar-collapse {
+    border-color: darken($blue, 5%);
+}
+
+.navbar-brand {
+    padding: 2px 15px;
+
+    img {
+        max-height: 100%;
+    }
+}
+
+.navbar-default {
+    background: $blue;
+    border-color: $blue;
+    border-radius: 0;
+    top: 0;
+    z-index: 200;
+    width: 100%;
+
+    .nav > li > a {
+        color: $white;
+        padding: 15px;
+        overflow-y: hidden;
+
+        @include pseudo-el(before, 100%, 2px) {
+            @extend %navbar-pseudos;
+            top: -5px;
+            z-index: 50;
+        }
+
+        @include pseudo-el(after, 100%, 2px) {
+            @extend %navbar-pseudos;
+            bottom: -5px;
+            z-index: 50;
+        }
+
+        &:focus, &:hover, &:active {
+            background: transparent;
+        }
+    }
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        position: relative;
+        color: $white;
+
+        @include pseudo-el(before, 100%, 2px) {
+            background: $white;
+            top: 5px;
+            left: 0;
+        }
+
+        @include pseudo-el(after, 100%, 2px) {
+            background: $white;
+            bottom: 5px;
+            left: 0;
+        }
+    }
+
+    .active a:hover {
+        @include pseudo-el(before, 100%, 2px) {
+            top: -5px !important;
+        }
+
+        @include pseudo-el(after, 100%, 2px) {
+            bottom: -5px !important;
+        }
+    }
+}
+
+.navbar {
+
+    @include e(toggle) {
+        display: inline-block;
+        background: $body-bg;
+        border: 2px solid $white;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        border-radius: 16px / 25px;
+        line-height: 0;
+        position: relative;
+
+        .icon-bar {
+            @include transition(transform, 0.45s, linear);
+            position: absolute;
+            background: $white;
+            height: 3px;
+            width: 20px;
+
+            &:first-child {
+                top: 7px;
+            }
+
+            &:nth-child(2) {
+                top: 16px;
+            }
+
+            &:nth-child(3) {
+                top: 26px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        @include m(toggled) {
+            overflow: hidden;
+
+            .icon-bar {
+                position: absolute;
+                background: $white;
+
+                &:first-child {
+                    transform: rotate(320deg);
+                    top: 18px;
+                    left: 13px;
+                    width: 15px;
+                    transform-origin: 75% 25% 0px;
+                    height: 3px;
+                    transform-origin: 75% 25%;
+                }
+
+                &:nth-child(2) {
+                    transform: rotate(-320deg);
+                    top: 17px;
+                    left: 5px;
+                    width: 15px;
+                    height: 3px;
+                    transform-origin: 25% 75%;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(270deg);
+                    top: 14px;
+                    left: 7px;
+                    width: 20px;
+                }
+            }
+        }
+    }
+}
+
+/*==========  .nav is the actual navigation list ==========*/
+
+.nav {
+    @extend %clearfix;
+    padding: 0;
+    margin: 0 -5.5%;
+    list-style: none;
+
+    @include e(item) {
+        display: block;
+
+        a {
+            @extend %nav-item-link;
+
+            &:active {
+                box-shadow: 0 1px 7px rgba($black, 0.55) inset;
+                transition: none;
+            }
+        }
+    }
+    // * Show nav when toggle menu is clicked //
+    @include m(toggled) {
+        display: block;
+        height: auto;
+    }
+
+    @media (min-width: $screen-sm) {
+        // * Always show the .nav at anything above $screen-sm resolutions //
+        display: block !important;
+        margin: 0;
+        height: auto;
+
+        @include e(item) {
+            margin: 0;
+
+            a {
+                border: 2px solid $white;
+                border-radius: $border-radius;
+                padding: 15px 20px;
+                font-size: floor($font-size--base * 0.95);
+                float: left;
+                margin-right: 5%;
+                text-align: center;
+                width: 20%;
+            }
+
+            &:last-child a {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    background: $lightBlue;
+    color: white;
+    font-weight: bold;
+    font-size: em(18px);
+}
+
+.servicesNav {
+    @media(max-width: 768px) {
+        margin: 0;
+    }
+}

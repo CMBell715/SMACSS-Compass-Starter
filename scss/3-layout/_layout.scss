@@ -1,0 +1,97 @@
+%page-section {
+    padding: em(35px) 0;
+}
+
+.page-section {
+    @extend %page-section;
+    background: $white;
+
+    &-blue {
+        @extend %page-section;
+        color: white;
+        background: $lightBlue;
+    }
+
+    &-gray {
+        @extend %page-section;
+        color: white;
+        background: $gray;
+    }
+}
+
+.process {
+    background-image: url("/assets/images/process.png");
+    background-repeat: no-repeat;
+    background-position: -1000% 0;
+
+    @media (min-width: 960px) {
+        background-position: 100% 0;
+    }
+
+    @media (min-width: 1200px) {
+        background-position: 0 30%;
+    }
+}
+
+.winTeam {
+    background-image: url("/assets/images/winTeam.png");
+    background-repeat: no-repeat;
+    background-position: -1000% 0;
+    background-blend-mode: overlay;
+
+    @media (min-width: 960px) {
+        background-position: 100% -20%;
+    }
+}
+
+.pricing {
+    background-image: url("/assets/images/pricing.png");
+    background-repeat: no-repeat;
+    background-position: -1000% 0;
+    background-blend-mode: overlay;
+
+    @media (min-width: 960px) {
+        background-position: 0 50%;
+    }
+}
+
+.service {
+    background-image: url("/assets/images/service.png");
+    background-repeat: no-repeat;
+    background-position: -1000% 0;
+    background-blend-mode: overlay;
+
+    @media (min-width: 960px) {
+        background-position: 0 50%;
+    }
+}
+
+.overview {
+    background-image: url("/assets/images/overview.png");
+    background-repeat: no-repeat;
+    background-position: -1000% 0;
+    background-blend-mode: overlay;
+
+    @media (min-width: 960px) {
+        background-position: 100% 0;
+    }
+
+    @media (min-width: 1200px) {
+        background-position: 0 20%;
+    }
+}
+
+.list-group > .list-group {
+    margin-bottom: -1px;
+
+    .list-group-item {
+        padding-left: 35px;
+        &:first-child, &:last-child {
+            border-radius: 0;
+        }
+    }
+}
+
+.mb-sm {
+    margin-bottom: em(15px);
+}

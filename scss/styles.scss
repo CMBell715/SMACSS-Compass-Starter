@@ -1,0 +1,13 @@
+//Compass imports
+
+@import "compass";
+@import "compass/layout/sticky-footer";
+
+// Sass globbing on, Windows is funky, instead of library/*/** syntax,
+// needs library/*/*.* syntax (or lib/*.* if there aren't any sub-directories)
+
+@import "1-utilities/*.*";
+@import "2-base/*.*";
+@import "3-layout/*.*";
+@import "4-modules/*.*";
+@import "5-states/*.**";

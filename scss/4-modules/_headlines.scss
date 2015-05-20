@@ -1,0 +1,49 @@
+.headline {
+    &-primary {
+        text-align: center;
+        color: $lightBlue;
+        font-size: 5em;
+        text-shadow: 2px 2px rgba(darken($blue, 20%), 0.5), 1px 1px rgba(darken($blue, 20%), 0.5);
+        margin: 0;
+    }
+
+    &-secondary {
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.section-headline {
+    &-primary {
+        font-size: em(36px);
+        text-shadow: 2px 2px rgba(darken($gray, 20%), 0.25), 1px 1px rgba(darken($gray, 20%), 0.25);
+    }
+
+    &-secondary {
+        font-size: em(24px);
+        font-style: italic;
+        margin: 0 0 20px 0;
+    }
+}
+
+.services {
+    &-title {
+        font-size: em(28px);
+        margin: 0 0 20px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $gray;
+    }
+    h4 {
+        font-size: em(24px);
+        font-weight: bold;
+    }
+    h5 {
+        font-size: em(18px);
+        font-style: italic;
+        text-decoration: underline;
+    }
+}
+
+.headline-secondary + [class*="page-section"], .lead + [class*="page-section"]  {
+    margin-top: em(40px);
+}

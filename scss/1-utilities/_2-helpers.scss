@@ -1,0 +1,90 @@
+//=====================================================
+//  Helpers
+//=====================================================
+
+/*==========  Pseudo Elements  ==========*/
+%pseudos {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+%navbar-pseudos {
+    background: $white;
+    left: 0;
+    @include transition(top, .23s, ease-in);
+}
+
+/*==========  Positioning  ==========*/
+%pos-abs {
+  position: absolute;
+}
+
+%pos-rel {
+  position: relative;
+}
+
+/*==========  Displays  ==========*/
+%disp-block {
+  display: block;
+}
+
+%disp-ib {
+  display: inline-block;
+}
+
+%disp-fix {
+  position: fixed;
+}
+
+%centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+/*==========  Text-aligns  ==========*/
+%text-center {
+  text-align: center;
+}
+
+%text-left {
+  text-align: left;
+}
+
+%text-right {
+  text-align: right;
+}
+
+/*==========  Floats  ==========*/
+%float-left {
+  float: left;
+}
+
+%float-right {
+  float: right;
+}
+
+%float-none {
+  float: none;
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/*======== Screen Reader Text =========*/
+%srt {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

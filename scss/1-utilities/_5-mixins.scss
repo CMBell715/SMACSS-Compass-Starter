@@ -1,0 +1,74 @@
+// Mixins
+
+// Background color mixin (btns, loading bars, panels, etc...)
+@mixin bg-colors($map) {
+  @each $theme, $color in $map {
+    &-#{$theme} {
+      background-color: $color;
+    }
+  }
+}
+
+// Button mixin color mixin (btns, loading bars, panels, etc...)
+@mixin buttons($map) {
+  //Standards for all buttons
+  @extend %btn;
+  // Themed buttons. Didn't include bg-colors mixin because doesn't have hover
+  @each $theme, $color in $map {
+    &-#{$theme} {
+      background: $color;
+      &:hover, &:active, &:focus {
+        color: darken($color, 35%);
+        background: darken($color, 11.5%);
+      }
+    }
+  }
+}
+
+
+//Pseudo element quick creator.
+@mixin pseudo-el($el, $el-w: null, $el-h: null) {
+  @if $el == "before" or $el == "after" {
+    &:#{$el} {
+      @extend %pseudos;
+      width: $el-w;
+      height: $el-h;
+      @content;
+    }
+  }
+  @else {
+    @warn "#{$el} is not a valid value for pseudo-el. Please use 'before' or 'after'";
+  }
+}
+
+// Transition with vendor prefixes.
+@mixin transition($property: all, $duration: 0.08s, $type: ease-in) {
+  -webkit-transition: $property $duration $type;
+  -moz-transition: $property $duration $type;
+  -ms-transition: $property $duration $type;
+  -o-transition: $property $duration $type;
+  transition: $property $duration $type;
+}
+
+// BEM selectors
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Adjacent siblings selector
+
+@mixin adjacentSiblings($margin: 1em) {
+  & + & {
+    margin-left: $margin;
+    @content;
+  }
+}

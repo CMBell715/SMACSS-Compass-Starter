@@ -1,0 +1,19 @@
+#root {
+	overflow-y: hidden;
+}
+
+.navbar-no-collapse {
+    padding: 0 35px;
+    margin-bottom: 0 !important;
+    ul > li {
+        border-bottom: 1px solid $white;
+    }
+    ul > li:last-of-type {
+        border-bottom: none;
+    }
+    @media (min-width: $screen-sm) {
+        ul > li {
+            border-bottom: none;
+        }
+    }
+}
